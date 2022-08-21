@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Box } from 'components/Box';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -17,4 +18,13 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       ))}
     </Box>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.exact({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

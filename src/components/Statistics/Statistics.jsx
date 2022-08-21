@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StatisticItem } from './Statistic.styled';
 
 export const Statistics = ({
@@ -26,4 +27,14 @@ export const Statistics = ({
       </StatisticItem>
     </ul>
   );
+};
+
+Statistics.propTypes = {
+  options: PropTypes.exact({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    totalFeedback: PropTypes.number.isRequired,
+    positiveFeedbackPercentage: PropTypes.number.isRequired,
+  }),
 };
